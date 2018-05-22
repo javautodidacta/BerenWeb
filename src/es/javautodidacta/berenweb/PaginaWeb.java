@@ -31,7 +31,7 @@ public class PaginaWeb {
         boolean validUrl = u.isValid("https://www." + url);
         
         if(!validUrl) {
-            this.url = "https://www.google.es/?search=" + url;
+            this.url = "https://es.wikipedia.org/wiki/" + url;
         } else {
             this.url = "https://www." + url;
         }
