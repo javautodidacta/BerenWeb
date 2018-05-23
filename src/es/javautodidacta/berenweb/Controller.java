@@ -1,5 +1,6 @@
 package es.javautodidacta.berenweb;
 
+import javafx.concurrent.Worker;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -39,11 +40,21 @@ public class Controller {
             paginaWeb = historial.retroceder();
             abrirURL();
         });
+        
+        barraProgreso.progressProperty().bind(webEngine.getLoadWorker().progressProperty());
+        webEngine.getLoadWorker().stateProperty()
+                 .addListener((observable, oldValue, newValue) -> {
+            if( newValue == Worker.State.SUCCEEDED) {
+                barraProgreso.setVisible(false);
+                estado.setText("Listo.");
+            }
+        });
     }
     
     private void abrirURL() {
         String url = paginaWeb.getUrl();
         barraURL.setText(url);
+        barraProgreso.setVisible(true);
         webEngine.load(url);
         estado.setText("Cargando " + paginaWeb.getDominio());
     }

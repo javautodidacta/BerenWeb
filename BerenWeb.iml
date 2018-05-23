@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="commons-validator:commons-validator:1.6" level="project" />
+    <orderEntry type="library" name="com.jfoenix:jfoenix:8.0.4" level="project" />
   </component>
 </module>
