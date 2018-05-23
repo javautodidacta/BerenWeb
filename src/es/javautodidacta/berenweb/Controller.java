@@ -42,9 +42,10 @@ public class Controller {
     }
     
     private void abrirURL() {
-        
-        webEngine.load(paginaWeb.getUrl());
-        estado.setText("Cargando...");
+        String url = paginaWeb.getUrl();
+        barraURL.setText(url);
+        webEngine.load(url);
+        estado.setText("Cargando " + paginaWeb.getDominio());
     }
     
 }
