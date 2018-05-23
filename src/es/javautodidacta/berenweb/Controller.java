@@ -9,9 +9,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 public class Controller {
     @FXML private Button abrirURL;
     @FXML private TextField barraURL;
@@ -46,6 +43,9 @@ public class Controller {
                  .addListener((observable, oldValue, newValue) -> {
             if( newValue == Worker.State.SUCCEEDED) {
                 barraProgreso.setVisible(false);
+                Main.getStage().setTitle(webEngine.getTitle());
+                barraURL.setText(webEngine.getLocation());
+                historial.agregarHistorial(new PaginaWeb(webEngine.getLocation()));
                 estado.setText("Listo.");
             }
         });

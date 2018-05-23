@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.web.WebView?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXProgressBar?>
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="es.javautodidacta.berenweb.Controller">
-    <MenuBar VBox.vgrow="NEVER">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.javautodidacta.berenweb.Controller">
+    <MenuBar stylesheets="@styles/styles.css" VBox.vgrow="NEVER">
         <Menu mnemonicParsing="false" text="File">
             <MenuItem mnemonicParsing="false" text="New" />
             <MenuItem mnemonicParsing="false" text="Open…" />
@@ -46,11 +46,14 @@
         </Menu>
     </MenuBar>
     <AnchorPane VBox.vgrow="ALWAYS">
-        <JFXButton fx:id="abrirURL" layoutX="503.0" layoutY="14.0" mnemonicParsing="false" text="Abrir" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="14.0" />
-        <Label fx:id="estado" layoutX="14.0" layoutY="350.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" />
-        <JFXProgressBar fx:id="barraProgreso" visible="false" layoutX="77.0" layoutY="349.0" prefHeight="20.0" prefWidth="549.0" progress="0.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="14.0" />
-        <WebView fx:id="webView" layoutX="14.0" layoutY="54.0" prefHeight="278.0" prefWidth="611.0" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0" />
-        <TextField fx:id="barraURL" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="449.0" promptText="Introduce url o término para buscar en Google" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="14.0" />
-      <JFXButton fx:id="atras" layoutX="570.0" layoutY="14.0" mnemonicParsing="false" text="Atrás" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+        <JFXButton id="button" fx:id="abrirURL" layoutX="503.0" layoutY="14.0" mnemonicParsing="false" ripplerFill="#16fa02" stylesheets="@styles/styles.css" text="Abrir" textAlignment="CENTER" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="14.0" />
+        <Label fx:id="estado" layoutX="14.0" layoutY="352.0" textOverrun="CENTER_ELLIPSIS" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="14.0" />
+        <JFXProgressBar fx:id="barraProgreso" layoutX="190.0" layoutY="349.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="5.0" prefWidth="436.0" progress="0.0" visible="false" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="14.0">
+         <effect>
+            <Bloom threshold="1.0" />
+         </effect></JFXProgressBar>
+        <WebView fx:id="webView" layoutX="14.0" layoutY="54.0" prefHeight="297.0" prefWidth="611.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0" />
+        <TextField fx:id="barraURL" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="483.0" promptText="Introduce url o término para buscar en Google" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="143.0" AnchorPane.topAnchor="14.0" />
+      <JFXButton id="button" fx:id="atras" layoutX="570.0" layoutY="14.0" mnemonicParsing="false" ripplerFill="#19fc05" stylesheets="@styles/styles.css" text="Atrás" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
     </AnchorPane>
 </VBox>

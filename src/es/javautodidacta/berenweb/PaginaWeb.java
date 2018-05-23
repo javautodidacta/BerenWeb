@@ -36,7 +36,7 @@ public class PaginaWeb {
      * @param url
      */
     private void setUrl(String url) {
-    
+        url = url.replace(" ", "%20");
         String httpUrl = url.startsWith("http") ? url : "https://www." + url;
         boolean URLvalida = comprobarURL(httpUrl);
     

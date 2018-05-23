@@ -27,7 +27,6 @@ class Historial {
     }
     
     public PaginaWeb retroceder() {
-        historial.remove(0);
-        return historial.get(0);
+        return historial.remove(historial.size() - 1);
     }
 }
