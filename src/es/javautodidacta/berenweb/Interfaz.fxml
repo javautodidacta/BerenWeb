@@ -46,7 +46,7 @@
         </Menu>
     </MenuBar>
     <AnchorPane VBox.vgrow="ALWAYS">
-        <JFXButton id="button" fx:id="abrirURL" layoutX="503.0" layoutY="14.0" mnemonicParsing="false" ripplerFill="#16fa02" stylesheets="@styles/styles.css" text="Abrir" textAlignment="CENTER" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="14.0" />
+        <JFXButton id="button" fx:id="abrirURL" layoutX="503.0" layoutY="14.0" mnemonicParsing="false" ripplerFill="#93eb8b" stylesheets="@styles/styles.css" text="Abrir" textAlignment="CENTER" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="14.0" />
         <Label fx:id="estado" layoutX="14.0" layoutY="352.0" textOverrun="CENTER_ELLIPSIS" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="14.0" />
         <JFXProgressBar fx:id="barraProgreso" layoutX="190.0" layoutY="349.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="5.0" prefWidth="436.0" progress="0.0" visible="false" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="14.0">
          <effect>
@@ -54,6 +54,7 @@
          </effect></JFXProgressBar>
         <WebView fx:id="webView" layoutX="14.0" layoutY="54.0" prefHeight="297.0" prefWidth="611.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0" />
         <TextField fx:id="barraURL" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="483.0" promptText="Introduce url o término para buscar en Google" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="143.0" AnchorPane.topAnchor="14.0" />
-      <JFXButton id="button" fx:id="atras" layoutX="570.0" layoutY="14.0" mnemonicParsing="false" ripplerFill="#19fc05" stylesheets="@styles/styles.css" text="Atrás" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <JFXButton id="button" fx:id="atras" layoutX="559.0" layoutY="14.0" mnemonicParsing="false" ripplerFill="#ff6969" stylesheets="@styles/styles.css" text="&lt;" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="14.0" />
+      <JFXButton id="button" fx:id="alante" layoutX="596.0" layoutY="14.0" mnemonicParsing="false" ripplerFill="#fa05a5" stylesheets="@styles/styles.css" text="&gt;" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0" />
     </AnchorPane>
 </VBox>
