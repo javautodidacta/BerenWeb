@@ -6,7 +6,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 /**
- * This class
+ * Esta clase crea una "página web" que contiene dos variables: una url y el dominio.
  *
  * @author Miguel Callejón Berenguer
  * @version 2018.05
