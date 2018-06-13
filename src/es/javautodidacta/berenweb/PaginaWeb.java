@@ -17,7 +17,6 @@ public class PaginaWeb {
     
     PaginaWeb(String url) {
         setUrl(url);
-        setDominio();
     }
     
     public String getUrl() {
@@ -40,8 +39,10 @@ public class PaginaWeb {
     
         if (URLvalida) {
             this.url = httpUrl;
+            this.dominio = setDominio();
         } else {
             this.url = "https://es.wikipedia.org/wiki/" + url;
+            this.dominio = "Wikipedia";
         }
     }
     
@@ -52,16 +53,27 @@ public class PaginaWeb {
      * @return true si httpUrl es una URL válida.
      */
     private boolean comprobarURL(String httpUrl) {
-        UrlValidator u = new UrlValidator();
+        UrlValidator u = UrlValidator.getInstance();
         return u.isValid(httpUrl);
     }
     
-    private void setDominio() {
+    private String setDominio() {
         try {
             URI uri = new URI(url);
-            dominio = uri.getHost();
+            String dominio = uri.getHost();
+            if(dominio.startsWith("www.")) {
+                dominio = dominio.substring(4);
+            }
+            if(dominio.contains(".")) {
+                dominio = dominio.substring(0, dominio.indexOf("."));
+            }
+            dominio = dominio.substring(0, 1)
+                             .toUpperCase() +
+                      dominio.substring(1);
+            return dominio;
         } catch (URISyntaxException e) {
             e.printStackTrace();
+            return "";
         }
     }
     

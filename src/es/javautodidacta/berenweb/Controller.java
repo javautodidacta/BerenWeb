@@ -30,7 +30,7 @@ public class Controller {
         historial = webEngine.getHistory();
         
         abrirURL.setOnMouseClicked((view) -> {
-            paginaWeb = new PaginaWeb(barraURL.getText());
+            paginaWeb = new PaginaWeb(barraURL.getText().toLowerCase());
             abrirURL();
         });
         
