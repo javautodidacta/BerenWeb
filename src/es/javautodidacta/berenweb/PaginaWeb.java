@@ -4,8 +4,6 @@ import org.apache.commons.validator.routines.UrlValidator;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 /**
  * This class
@@ -33,7 +31,7 @@ public class PaginaWeb {
     /**
      * Define el valor the this.url dependiendo de si la cadena de texto introducida en
      * la barra de direcciones es una url o no.
-     * @param url
+     * @param url   El texto introducido en la barra de direcciones.
      */
     private void setUrl(String url) {
         url = url.replace(" ", "%20");
